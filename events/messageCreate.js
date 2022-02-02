@@ -37,7 +37,7 @@ module.exports = {
 
             }
             else 
-                console.error(error)
+                console.error(err)
         }
     }
 }
