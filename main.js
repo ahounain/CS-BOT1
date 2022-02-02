@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 require ("dotenv").config()
-const token = "OTM4MjYzMTU0MjIyMzA5NDc3.YfnvqA.pWQCdvQ9x9qpMPCI5DmtTlynCbc";
+
 // allows the constant Discord to interact with the node modules
 const client = new Discord.Client({
     // intents lets the discord bot know what to look out for
