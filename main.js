@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 require ("dotenv").config()
 
 // allows the constant Discord to interact with the node modules
@@ -9,11 +9,11 @@ const client = new Discord.Client({
         "GUILD_MESSAGES", 
         "GUILD_MEMBERS"
     ]
-});
+})
 
 let bot = {
     client, 
-    prefix: "n.",
+    prefix: "!",
     owners: [344998078467670019]
 }
 client.commands = new Discord.Collection();
