@@ -21,14 +21,17 @@ let bot = {
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
 client.slashcommands = new Discord.Collection();
+client.buttons = new Discord.Collection();
 
 client.loadEvents = (bot, reload) => require("./handlers/events")(bot, reload)
 client.loadCommands = (bot, reload) => require("./handlers/commands")(bot, reload)
 client.loadslashcommands = (bot, reload) => require("./handlers/slashcommands")(bot, reload)
+client.loadButtons = (bot, reload) => require("./handlers/buttons")(bot, reload)
 
 client.loadEvents(bot, false)
 client.loadCommands(bot, false)
 client.loadslashcommands(bot, false)
+client.loadButtons(bot, false)
 
 client.on("interactionCreate", (interaction) => {
     if (!interaction.isCommand()) return
@@ -38,7 +41,7 @@ client.on("interactionCreate", (interaction) => {
 
     if (!slashcmd) return interaction.reply("Invalid slash cmd")
 
-    if (slashcmd.perms && !interaction.member.permissions.has(slashcomd.perm))
+    if (slashcmd.perms && !interaction.member.permissions.has(slashcommand.perm))
         return interaction.reply("invalid perms to use cmd")
 
     slashcmd.run(client, interaction)

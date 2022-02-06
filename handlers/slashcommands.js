@@ -1,7 +1,7 @@
 const fs = require("fs")
 
 const getFiles = (path, ending) => {
-    return fs.readdirSync(path).filter(f => f.endsWith(ending))
+    return fs.readdirSync(path).filter((f) => f.endsWith(ending))
 }
 
 module.exports = (bot, reload) => {
@@ -10,10 +10,10 @@ module.exports = (bot, reload) => {
     let slashcommands = getFiles("./slashcommands/", ".js")
 
     if (slashcommands.length === 0) {
-        console.log("no slash commands loaded")
+        console.log("no events to load")
     }
 
-    slashcommands.forEach(f => {
+    slashcommands.forEach((f, i) => {
         if (reload) delete require.cache[require.resolve(`../slashcommands/${f}`)]
         const slashcmd = require(`../slashcommands/${f}`)
         client.slashcommands.set(slashcmd.name, slashcmd)
