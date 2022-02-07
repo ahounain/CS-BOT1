@@ -7,14 +7,15 @@ const client = new Discord.Client({
     intents: [
         "GUILDS", // guilds are discord servers essentially
         "GUILD_MESSAGES", 
-        "GUILD_MEMBERS"
+        "GUILD_MEMBERS",
+        
     ]
 })
 
 let bot = {
     client, 
     prefix: "!",
-    owners: [344998078467670019]
+    owners: ["344998078467670019"]
 }
 
 
